@@ -6,7 +6,7 @@ environment {
     stages {
         stage('Terraform intializing') {
             steps {
-                sh "terraform init"
+                sh "terraform init -reconfigure"
             }          
         }
     }
