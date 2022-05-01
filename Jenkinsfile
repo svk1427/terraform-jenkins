@@ -5,7 +5,7 @@ environment {
 }
     stages {
         stage('Terraform intializing') {
-            stepes {
+            steps {
                 sh "terraform init"
             }          
         }
