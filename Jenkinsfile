@@ -10,6 +10,7 @@ environment {
             }          
         }
     }
+}
  
  def getTerraformPath() {
     def tfHome = tool name: 'terraform-1.1.8', type: 'terraform'
