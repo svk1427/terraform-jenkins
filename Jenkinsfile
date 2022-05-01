@@ -7,7 +7,7 @@ environment {
         stage('Terraform intializing dev') {
             steps {
 		sh returnStatus: true, script: 'terraform workspace new dev'
-                sh "terraform init"
+                sh "terraform init -reconfigure"
 		sh "terraform apply -var-file=dev.tfvars -auto-approve"
             }          
         }
@@ -15,7 +15,7 @@ environment {
 	    stage('Terraform intializing prod') {
             steps {
 		sh returnStatus: true, script: 'terraform workspace new prod'
-                sh "terraform init"
+                sh "terraform init -reconfigure"
 		sh "terraform apply -var-file=prod.tfvars -auto-approve"
             }          
         }
