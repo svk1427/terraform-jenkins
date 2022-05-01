@@ -6,7 +6,9 @@ environment {
     stages {
         stage('Terraform intializing') {
             steps {
+		sh "sh returnStatus: true, script: 'terraform workspace new dev'"
                 sh "terraform init -reconfigure"
+		sh "terraform apply -var-file=dev.tfvars"
             }          
         }
     }
